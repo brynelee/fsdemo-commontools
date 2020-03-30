@@ -5,6 +5,7 @@ metadata:
   namespace: logging
 spec:
   serviceName: elasticsearch
+  # should set to 3 or more if there are more nodes, have to set to 1 if only 1 node(master only)
   replicas: 3
   selector:
     matchLabels:

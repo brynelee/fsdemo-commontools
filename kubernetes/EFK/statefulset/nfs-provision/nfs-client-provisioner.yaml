@@ -31,9 +31,9 @@ spec:
             - name: NFS_SERVER
               value: 192.168.3.150
             - name: NFS_PATH
-              value: /d/nfsroot/nfshome
+              value: /d/nfsroot
       volumes:
         - name: nfs-client-root
           nfs:
             server: 192.168.3.150
-            path: /d/nfsroot/nfshome
+            path: /d/nfsroot
