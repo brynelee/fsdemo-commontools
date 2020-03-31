@@ -69,9 +69,11 @@ spec:
           privileged: true
       volumes:
         - name: data
-          persistentVolumeClaim:
-            claimName: es-pvc
+#          persistentVolumeClaim:
+#            claimName: es-pvc
 #          emptyDir: {}
+          hostPath: 
+            path: /usr/local
 
 ---
 
