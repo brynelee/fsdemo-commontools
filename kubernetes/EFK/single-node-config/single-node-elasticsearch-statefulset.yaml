@@ -69,9 +69,9 @@ spec:
           privileged: true
       volumes:
         - name: data
-#          persistentVolumeClaim:
-#            claimName: es-pvc
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: es-pvc
+#          emptyDir: {}
 
 ---
 
