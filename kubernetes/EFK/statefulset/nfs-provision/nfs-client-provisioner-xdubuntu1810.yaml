@@ -31,9 +31,9 @@ spec:
             - name: NFS_SERVER
               value: 192.168.3.127
             - name: NFS_PATH
-              value: /var/nfsroot/data_xdpc
+              value: /var/nfsroot/es_data
       volumes:
         - name: nfs-client-root
           nfs:
             server: 192.168.3.127
-            path: /var/nfsroot/data_xdpc
+            path: /var/nfsroot/es_data
