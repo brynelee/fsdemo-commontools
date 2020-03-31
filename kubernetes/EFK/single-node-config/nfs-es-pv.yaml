@@ -4,11 +4,11 @@ metadata:
   name: nfs-es-pv
 spec:
   capacity:
-    storage: 5Gi
+    storage: 15Gi
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Recycle
+  persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs
   nfs:
-    path: /d/nfsroot/esdata
-    server: 192.168.3.150
+    path: /var/nfsroot/es_data
+    server: 192.168.3.127
