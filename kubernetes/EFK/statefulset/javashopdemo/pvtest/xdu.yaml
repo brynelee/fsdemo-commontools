@@ -1,0 +1,22 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: xdu
+spec:
+  containers:
+  - name: xdu
+    image: ubuntu:latest
+    command:
+      - "/bin/sh"
+    args:
+      - "-c"
+#      - "touch /mnt/SUCCESS && exit 0 || exit 1"
+      - "echo hello > /mnt/aa.txt && exit 0 || exit 1"
+    volumeMounts:
+      - name: nfs-pvc
+        mountPath: "/mnt"
+  restartPolicy: "Never"
+  volumes:
+    - name: nfs-pvc
+      persistentVolumeClaim:
+        claimName: pvc-es-master

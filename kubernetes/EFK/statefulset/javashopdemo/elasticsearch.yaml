@@ -73,7 +73,7 @@ spec:
                   fieldPath: metadata.name
             #修改es默认的数据存储目录，否则多个节点同时写一个目录es权限不允许                                           
             - name: "path.data"
-              value: "/usr/share/elasticsearch/data/$(MY_POD_NAME)"            
+              value: "/usr/share/elasticsearch/data/${MY_POD_NAME}"            
             - name: "cluster.name"
               value: "elasticsearch-cluster"
             - name: "bootstrap.memory_lock"
@@ -132,7 +132,7 @@ metadata:
   namespace: logging
 spec:
   serviceName: es-data  
-  replicas: 2
+  replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
