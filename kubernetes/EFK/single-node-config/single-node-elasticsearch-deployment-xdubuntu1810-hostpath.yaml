@@ -72,8 +72,8 @@ spec:
 #          persistentVolumeClaim:
 #            claimName: es-pvc
 #          emptyDir: {}
-          hostPath: 
-            path: /usr/local
+          hostPath:
+            path: /home/hadoop/es_data
 
 ---
 
