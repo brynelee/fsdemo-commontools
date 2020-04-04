@@ -1,0 +1,25 @@
+version: '2.2'
+services:
+  es01:
+    image: docker.io/citizenstig/httpbin
+    container_name: httpbin
+    volumes:
+      - data01:/usr/local/data01
+    ports:
+      - 8000:8000
+    networks:
+      - elastic
+
+volumes:
+  data01:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: addr=192.168.3.150,rw
+      device: ":/d/nfsroot"
+
+networks:
+  elastic:
+    driver: bridge
+
+
