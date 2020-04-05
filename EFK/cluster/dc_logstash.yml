@@ -1,0 +1,19 @@
+version: '2.2'
+services:
+  logstash01:
+    image: docker.elastic.co/logstash/logstash:7.6.2
+    container_name: logstash01
+    ports: 
+      - 5044:5044
+    volumes:
+      - D:/Gitroot/fsdemo/fsdemo-commontools/EFK/single-node/logstash-pipeline/:/usr/share/logstash/pipeline/
+      - D:/Gitroot/fsdemo/fsdemo-commontools/EFK/single-node/logstash-config/logstash.yml:/usr/share/logstash/config/logstash.yml
+    environment:
+      ELASTICSEARCH_URL: http://192.168.3.150:9200
+      ELASTICSEARCH_HOSTS: http://192.168.3.150:9200
+    networks:
+      - elastic
+
+networks:
+  elastic:
+    driver: bridge

@@ -1,0 +1,2 @@
+#!/bin/sh
+docker run -p 5044:5044 -v ./logstash-pipeline/:/usr/share/logstash/pipeline/ -v ./logstash-config/logstash.yml:/usr/share/logstash/config/logstash.yml -E ELASTICSEARCH_URL=http://es01:9200 -E ELASTICSEARCH_HOSTS: http://es01:9200 -d docker.elastic.co/logstash/logstash:7.6.2
